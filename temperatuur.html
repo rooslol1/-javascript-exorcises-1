@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Roos de Boer, GD1B">
+    <link rel="stylesheet" href="style.css">
+    <title> Temperatuur </title>
+  </head>
+  <body>
+    <h1> Temperatuur </h1>
+    <h2> <a href="index.html" class="button"> Home </a> </h2>
+    <form>
+      <div>
+        Temperatuur in Graden Celsius: <input type="number" id ="celsius" required/>
+      </div><br>
+      <div>
+        Graden Fahrenheit:  <input class="input" id="fahrenheit"/>
+      </div><br>
+      <div>
+        Regel met "Graden Kelvin": <input class="input" id="kelvin"/>
+      </div><br>
+      <div>
+        <input type="button" id="rekenOm" value="Reken om"/>
+      </div>
+
+    </form>
+
+    <script>
+      function berekenFahrenheit(){
+        let Tcelsius = document.getElementById('celsius').value;
+        let Tfahrenheit = 9* parseFloat(Tcelsius)/5 + 32;
+        document.getElementById('fahrenheit').value = Tfahrenheit;
+
+      }
+
+      function berekenKelvin(){
+        let Tcelsius = document.getElementById('celsius').value;
+        let Tkelvin = parseFloat(Tcelsius) + 273;
+        document.getElementById('kelvin').value = Tkelvin;
+      }
+
+      document.getElementById('rekenOm').addEventListener("click", berekenFahrenheit);
+      document.getElementById('rekenOm').addEventListener("click", berekenKelvin);
+
+    </script>
+  </body>
+</html>

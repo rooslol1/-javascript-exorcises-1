@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Cirkel berekenen">
+    <meta name="author" content="Roos de Boer, GD1B">
+    <link rel="stylesheet" href="style.css">
+    <title> Cirkel </title>
+  </head>
+  <body>
+    <h1> Cirkel </h1>
+    <h2> <a href="index.html" class="button"> Home </a> </h2>
+          <form>
+
+            <label class="label">Straal van een Cirkel</label>
+            <div>
+              <input type="number" id="straal" required>
+            </div><br>
+
+            <div>
+              <input type="button" id="btn01" value="Bereken Oppervlakte en Omtrek">
+            </div><br>
+            <label class="label">Oppervlakte</label>
+            <div>
+              <input class="input" id="resultaatOppervlakte" type="text">
+            </div><br>
+
+          <div class="field">
+            <label class="label">Omtrek</label>
+            <div>
+              <input class="input" id="resultaatOmtrek" type="number">
+            </div><br>
+          </div>
+        </form>
+
+
+  <script>
+  //Berekent oppervlakte
+  function berekenOppervlakte(){
+    let straal = document.getElementById('straal').value;
+    let resultaat = Math.pow(straal,2) * Math.PI;
+
+    document.getElementById('resultaatOppervlakte').value = resultaat;
+  }
+
+  //Berekent Omtrek
+  function berekenOmtrek(){
+    let straal = document.getElementById('straal').value;
+    let resultaat = 2 * parseFloat(straal) * Math.PI;
+
+    document.getElementById('resultaatOmtrek').value = resultaat;
+  }
+
+  document.getElementById('btn01').addEventListener("click", berekenOppervlakte);
+  document.getElementById('btn01').addEventListener("click", berekenOmtrek);
+  </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Rechthoek berekenen">
+    <meta name="author" content="Roos de Boer, GD1B">
+    <link rel="stylesheet" href="style.css">
+    <title> Rechthoek </title>
+  </head>
+  <body>
+    <h1> Rechthoek </h1>
+    <h2> <a href="index.html" class="button"> Home </a> </h2>
+    <form>
+      <label class="label">Lengte Rechthoek</label>
+        <div>
+          <input type="number" id="lengte" required/>
+        </div><br>
+      <label class="label">Breedte Rechthoek</label>
+        <div>
+          <input type="number" id="breedte" required/>
+        </div><br>
+        <div>
+          <input type="button" id="btn01" value="Bereken Oppervlakte en Omtrek"/>
+        </div><br>
+      <label class="label">Oppervlakte</label>
+        <div>
+          <input class="input" id="oppervlak" type="text"/>
+        </div><br>
+      <label class="label">Omtrek</label>
+        <div>
+          <input class="input" id="omtrek" type="text"/>
+        </div><br>
+
+    </form>
+
+    <script>
+    //Berekent Oppervlakte
+    function berekenOppervlakte(){
+      let lengte = document.getElementById('lengte').value;
+      let breedte = document.getElementById('breedte').value;
+      let resultaat = parseFloat(lengte) * parseFloat(breedte);
+
+      document.getElementById('oppervlak').value = resultaat;
+    }
+
+    //Berekent Omtrek rechthoek
+    function berekenOmtrek(){
+      let lengte = document.getElementById('lengte').value;
+      let breedte = document.getElementById('breedte').value;
+      let resultaat = (2 * parseFloat(lengte)) + (2 * parseFloat(breedte));
+
+      document.getElementById('omtrek').value = resultaat;
+    }
+
+    document.getElementById('btn01').addEventListener("click", berekenOppervlakte);
+    document.getElementById('btn01').addEventListener("click", berekenOmtrek);
+    </script>
+  </body>
+</html>
